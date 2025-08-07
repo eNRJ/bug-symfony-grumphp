@@ -1,2 +1,15 @@
 grumphp:
-    tasks: {  }
+    git_hook_variables:
+      EXEC_GRUMPHP_COMMAND: docker compose exec --no-TTY php
+      ENV: {}
+    tasks:
+      git_blacklist:
+        keywords:
+          - "\\sdie("
+          - "\\svar_dump("
+          - "\\sexit;"
+          - "\\sdd("
+          - "\\sdump("
+          - "@include hyphens"
+          - "@include content-columns"
+        triggered_by: ['php','scss']
