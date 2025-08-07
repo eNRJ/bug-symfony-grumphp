@@ -1,6 +1,6 @@
-grumphp:
+parameters:
     git_hook_variables:
-      EXEC_GRUMPHP_COMMAND: docker compose exec --no-TTY php
+      EXEC_GRUMPHP_COMMAND: docker compose run --no-TTY php
       ENV: {}
     tasks:
       git_blacklist:
